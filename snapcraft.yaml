@@ -11,7 +11,7 @@ parts:
         source: https://github.com/KrisPan0325/linux-intel-lts.git
         source-branch: 5.4/yocto
         source-type: git
-        kdefconfig: [x86_64_defconfig]
+        kdefconfig: [intel-ikt-config]
         kconfigs:
             - CONFIG_LOCALVERSION="-iotg-kernel"
             - CONFIG_DEBUG_INFO=n
