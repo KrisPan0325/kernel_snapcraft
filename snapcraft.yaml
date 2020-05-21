@@ -1,4 +1,4 @@
-name: ehl-kernel
+name: intel-ikt
 version: 5.4.39
 summary: build EHL kernel from source
 description: This kernel from IOTG kernel team
