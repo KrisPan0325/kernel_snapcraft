@@ -1,0 +1,26 @@
+name: ehl-kernel
+version: 5.4.39
+summary: build EHL kernel from source
+description: This kernel from IOTG kernel team
+type: kernel
+architectures: [ amd64 ]
+
+parts:
+    kernel:
+        plugin: kernel
+        source: https://github.com/KrisPan0325/linux-intel-lts.git
+        source-branch: 5.4/yocto
+        source-type: git
+        kdefconfig: [x86_64_defconfig]
+        kconfigs:
+            - CONFIG_LOCALVERSION="-iotg-kernel"
+            - CONFIG_DEBUG_INFO=n
+            - CONFIG_SQUASHFS=m
+            - CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
+
+        kernel-initrd-modules:
+            - squashfs
+        kernel-image-target: bzImage
+        kernel-device-trees:
+            - actduino_bubble_gum_sdboot_linux
+        build-packages: [bc, kmod, cpio]
